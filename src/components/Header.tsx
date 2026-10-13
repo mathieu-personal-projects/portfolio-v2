@@ -1,0 +1,50 @@
+import { Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { GitHubIcon, LinkedInIcon } from "./icons";
+
+const navLinks = [
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#skills", label: "Skills" },
+];
+
+export function Header() {
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b">
+      <div className="max-w-5xl mx-auto flex items-center justify-between h-14 px-6">
+        <a href="#" className="font-bold tracking-tight text-base">
+          MA
+        </a>
+        <nav className="hidden sm:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div className="flex items-center gap-1">
+          <Button variant="ghost" size="icon-sm" asChild>
+            <a href="mailto:mathieu.audibert27@gmail.com" aria-label="Email">
+              <Mail className="size-4" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon-sm" asChild>
+            <a href="https://linkedin.com/in/mathieu-audibert" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <LinkedInIcon className="size-4" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon-sm" asChild>
+            <a href="https://github.com/MathieuAudibert" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <GitHubIcon className="size-4" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+}
