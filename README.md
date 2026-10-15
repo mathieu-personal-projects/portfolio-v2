@@ -1,21 +1,5 @@
-# bun-react-tailwind-shadcn-template
+# portfoliov2
 
-To install dependencies:
+This is my portfolio repository
 
-```bash
-bun install
-```
-
-To start a development server:
-
-```bash
-bun dev
-```
-
-To run for production:
-
-```bash
-bun start
-```
-
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Pokable @ https://mathieu-au.is-a.dev or https://mathieuaudibert.vercel.app/
