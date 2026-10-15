@@ -50,13 +50,21 @@ const skillCategories = [
     label: "Spoken Languages",
     items: ["French (native)", "English (fluent)", "Spanish (partial)", "Portuguese (notions)"],
   },
+  {
+    label: "Interests",
+    items: ["Football", "Volleyball", "Motorsports", "Paintings", "Cinema", "Music"],
+  },
+  {
+    label: "Technological watch",
+    items: ["Information by Informatics", "Medical assistance w/ robotics"]
+  },
 ];
 
 export function Skills() {
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <SectionHeader number="05" title="Skills" subtitle="Technologies and tools" />
+        <SectionHeader number="05" title="Skills & Interests" subtitle="Technologies and tools" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category) => (
             <div key={category.label} className="space-y-3">

@@ -4,6 +4,7 @@ import { SectionHeader } from "./SectionHeader";
 import creditAgricoleLogo from "../assets/logos/credit-agricole.png";
 import cpamLogo from "../assets/logos/cpam-icon.png";
 import societeGeneraleLogo from "../assets/logos/societe-generale-icon.png";
+import aphpLogo from "../assets/logos/aphp.jpg";
 
 const experiences = [
   {
@@ -22,7 +23,7 @@ const experiences = [
     tech: ["Java", "Spring Boot", "Kafka", "Spark", "Docker", "Kubernetes", "ArgoCD", "Jenkins"],
   },
   {
-    company: "Caisse Primaire d'Assurance Maladie",
+    company: "Caisse Primaire d'Assurance Maladie (CPAM)",
     role: "Application Designer & Developer · Apprentice",
     period: "Sep 2024 – Jul 2025",
     location: "Créteil",
@@ -45,6 +46,18 @@ const experiences = [
       "Built a Python script to interrogate and report AWS Public Cloud transit gateways.",
     ],
     tech: ["Python", "AWS", "DevOps"],
+  },
+  {
+    company: "Assistance Publique des Hopitaux de Paris (APHP)",
+    role: "Administrative Assistant · Trainee",
+    period: "Jun 2024 – Jul 2024",
+    location: "Boulogne Billancourt",
+    logo: aphpLogo,
+    bullets: [
+      "Regular and emergency patient admissions",
+      "Helped patients with their records",
+    ],
+    tech: ["Emergencies", "Patience", "Communication"],
   },
 ];
 

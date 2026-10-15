@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { GitHubIcon, LinkedInIcon } from "./icons";
+import { GitHubIcon, GitLabIcon, LinkedInIcon } from "./icons";
 import logoSrc from "../assets/ma-logo.png";
 
 const navLinks = [
@@ -52,6 +52,16 @@ export function Header() {
               aria-label="GitHub"
             >
               <GitHubIcon className="size-4" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon-sm" asChild>
+            <a
+              href="https://gitlab.com/MathieuAudibert"
+              target="_blank"
+              rel="noopener noreferrer" 
+              aria-label="Gitlab"
+            >
+              <GitLabIcon className="size-4" />
             </a>
           </Button>
         </div>

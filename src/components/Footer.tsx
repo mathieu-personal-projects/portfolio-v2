@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, GitLabIcon, StackOverflowIcon } from "./icons";
+import { FaStackOverflow } from "react-icons/fa";
 
 const links = [
   {
@@ -24,7 +25,7 @@ const links = [
   {
     label: "Stack Overflow",
     href: "https://stackoverflow.com/users/29716694/mathieu",
-    icon: StackOverflowIcon,
+    icon: FaStackOverflow,
     isSvg: true,
   },
   {

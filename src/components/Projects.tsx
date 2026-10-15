@@ -9,7 +9,7 @@ const projects = [
     description:
       "Self-hosted cloud on a repurposed Dell Latitude and a Raspberry Pi. Includes Sentra, an API to remotely administrate the server through SSH tunnels, and a WireGuard VPN to bounce to the server's local network.",
     tech: ["Python", "Ubuntu Server", "WireGuard", "SSH"],
-    url: null,
+    url: "https://gitlab.com/prodigieux",
   },
   {
     name: "Gideon",

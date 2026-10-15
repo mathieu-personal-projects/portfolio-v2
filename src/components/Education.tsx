@@ -3,6 +3,8 @@ import { SectionHeader } from "./SectionHeader";
 import esilvLogo from "../assets/logos/esilv-favicon.png";
 import efreiLogo from "../assets/logos/assas-favicon.png";
 import lyceeLogo from "../assets/logos/lycee-alexandre-dumas.png";
+import { FaAws } from "react-icons/fa";
+import franceTravailLogo from "../assets/logos/mariane.png";
 
 const education = [
   {
@@ -28,7 +30,7 @@ const education = [
   {
     school: "Lycée Alexandre Dumas",
     degree: "Baccalauréat NSI, Physics-Chemistry & Complementary Maths",
-    period: "Sep 2019 – May 2022",
+    period: "Sep 2019 – Jun 2022",
     location: "St-Cloud",
     logo: lyceeLogo,
     coursework: "Relevant coursework : Graph Theory, Data Structures, Networking, Algorithms, Thermodynamics, Waves & Signals.",
@@ -37,8 +39,18 @@ const education = [
 ];
 
 const certifications = [
-  { name: "AWS Cloud Quest Practitioner", date: "Nov 2025" },
-  { name: "Concepteur Développeur d'Applications", date: "Apr 2025" },
+  {
+    name: "AWS Cloud Quest Practitioner",
+    proof: "ID: 6584e3b1-db1e-49a4-adfe-4e0b82eaf6fd",
+    logo: FaAws,
+    date: "Nov 2025"
+  },
+  {
+    name: "Concepteur Développeur d'Applications",
+    proof: "ID: 988224272263",
+    logo: franceTravailLogo,
+    date: "Apr 2025"
+  },
 ];
 
 export function Education() {
@@ -58,9 +70,8 @@ export function Education() {
                   </div>
                 ) : (
                   <div
-                    className={`w-3.5 h-3.5 rounded-full ring-4 ring-background relative z-10 ${
-                      edu.current ? "bg-primary" : "bg-muted-foreground/30"
-                    }`}
+                    className={`w-3.5 h-3.5 rounded-full ring-4 ring-background relative z-10 ${edu.current ? "bg-primary" : "bg-muted-foreground/30"
+                      }`}
                   />
                 )}
                 {i < education.length - 1 && <div className="w-px flex-1 bg-border mt-1" />}
@@ -88,19 +99,41 @@ export function Education() {
         </div>
 
         <div className="mt-16 pt-8 border-t">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-primary mb-5">
+          <h3 className="text-xs font-bold uppercase tracking-widest text-primary mb-6">
             Certifications
           </h3>
-          <div className="flex flex-wrap gap-3">
-            {certifications.map((cert) => (
-              <div
-                key={cert.name}
-                className="inline-flex items-center gap-3 rounded-lg border px-4 py-2.5 text-sm hover:border-primary/40 transition-colors"
-              >
-                <span className="font-medium">{cert.name}</span>
-                <span className="text-muted-foreground font-mono text-xs">{cert.date}</span>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {certifications.map((cert) => {
+              const LogoComponent = cert.logo;
+              const isReactIcon = typeof cert.logo === "function" || (cert.logo as any).$$typeof;
+
+              return (
+                <div
+                  key={cert.name}
+                  className="flex items-start gap-4 rounded-xl border p-4 hover:border-primary/40 transition-colors bg-card"
+                >
+                  {/* Logo on the left - customized to fill the square completely */}
+                  <div className="w-10 h-10 rounded-lg border bg-background flex items-center justify-center shrink-0 overflow-hidden p-0">
+                    {isReactIcon ? (
+                      <LogoComponent className="w-6 h-6 text-foreground" />
+                    ) : (
+                      <img src={cert.logo as string} alt={cert.name} className="w-full h-full object-cover" />
+                    )}
+                  </div>
+
+                  {/* Name and proof underneath */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="font-semibold text-sm tracking-tight leading-snug">{cert.name}</h4>
+                      <span className="text-xs text-muted-foreground font-mono shrink-0">{cert.date}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-mono mt-1">
+                      {cert.proof}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

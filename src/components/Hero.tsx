@@ -1,13 +1,14 @@
-import { Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GitHubIcon, LinkedInIcon, GitLabIcon, StackOverflowIcon } from "./icons";
 import logoSrc from "../assets/ma-logo.png";
+import { FaStackOverflow } from "react-icons/fa";
 
 const stats = [
   { value: "2+", label: "Years experience" },
-  { value: "5+", label: "Projects" },
-  { value: "3", label: "Companies" },
+  { value: "2nd", label: "Place Hackathon" },
   { value: "2", label: "Certifications" },
+  { value: "5+", label: "Projects" },
 ];
 
 export function Hero() {
@@ -56,10 +57,16 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              <Button size="lg" asChild>
+              <Button size="lg" className="text-white" asChild>
                 <a href="mailto:mathieu.audibert27@gmail.com">
-                  <Mail className="size-4" />
+                  <Mail className="size-4 text-white" />
                   Get in touch
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="pointer-events-none opacity-50" asChild>
+                <a href="path/to/cv" target="_blank" rel="noopener noreferrer">
+                  <Download className="size-4" />
+                  My Resume (WIP)
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
@@ -76,7 +83,7 @@ export function Hero() {
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <a href="https://stackoverflow.com/users/29716694/mathieu" target="_blank" rel="noopener noreferrer">
-                  <StackOverflowIcon className="size-4" />
+                  <FaStackOverflow className="size-4" />
                   Stack Overflow
                 </a>
               </Button>
