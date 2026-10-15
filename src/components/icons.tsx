@@ -15,3 +15,19 @@ export function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function GitLabIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0c.05.05.09.11.11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0c.05.05.09.11.11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z" />
+    </svg>
+  );
+}
+
+export function StackOverflowIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M15 21H3v-8.5h2.14v6.36h7.72V12.5H15V21zM12.86 17.86H5.14V16h7.72v1.86zM13.13 14.08l-.24-1.21 6.74-1.33.24 1.22-6.74 1.32zM13.4 10.54l-.08-1.24 6.83-.53.08 1.24-6.83.53zM14.64 7.12l.58-1.08 6.07 3.31-.59 1.08-6.06-3.31zM16.48 4.01l.72-1.03 5.81 4.08-.73 1.03-5.8-4.08zM19.76 1.7l1.2-.39 2.28 7.09-1.21.38-2.27-7.08z" />
+    </svg>
+  );
+}

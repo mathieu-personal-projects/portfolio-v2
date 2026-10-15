@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { SectionHeader } from "./SectionHeader";
 
 const skillCategories = [
   {
@@ -30,33 +31,41 @@ const skillCategories = [
   },
   {
     label: "Concepts",
-    items: ["Linux Kernel", "Cryptography", "AI & Neural Networks", "APIs", "DevOps", "Clean Code", "Cloud Computing", "OOP"],
+    items: [
+      "Linux Kernel",
+      "Cryptography",
+      "AI & Neural Networks",
+      "APIs",
+      "DevOps",
+      "Clean Code",
+      "Cloud Computing",
+      "OOP",
+    ],
   },
   {
     label: "AI Tools",
     items: ["Copilot", "OpenCode", "Amazon Nova", "Kimi K3", "Mistral 7b"],
   },
   {
-    label: "Languages (spoken)",
+    label: "Spoken Languages",
     items: ["French (native)", "English (fluent)", "Spanish (partial)", "Portuguese (notions)"],
   },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 bg-muted/50">
+    <section id="skills" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold tracking-tight">Skills</h2>
-        <p className="text-sm text-muted-foreground mt-1">Technologies and tools</p>
-        <div className="mt-10 space-y-8">
+        <SectionHeader number="05" title="Skills" subtitle="Technologies and tools" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category) => (
-            <div key={category.label}>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+            <div key={category.label} className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-primary">
                 {category.label}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {category.items.map((item) => (
-                  <Badge key={item} variant="outline" className="text-sm py-1 px-3">
+                  <Badge key={item} variant="secondary" className="font-mono text-xs py-1 px-2.5">
                     {item}
                   </Badge>
                 ))}
