@@ -10,3 +10,4 @@
 - [ ] Cleanup :
     - [ ] images
     - [x] Claude.md agents.md etc...
+- [ ] Francais/Anglais toggle
