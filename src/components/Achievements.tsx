@@ -2,15 +2,18 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { SectionHeader } from "./SectionHeader";
 import { ExternalLink } from "lucide-react";
+import { useTranslation } from "@/lib/i18n";
 
 export function Achievements() {
+  const { t } = useTranslation();
+
   return (
     <section id="achievements" className="py-24 px-6 bg-muted/50">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           number="04"
-          title="Research & Achievements"
-          subtitle="Publications, challenges, and competitions"
+          title={t.achievements.title}
+          subtitle={t.achievements.subtitle}
         />
 
         {/* Thesis / Paper Card with GitLab Link */}
@@ -23,7 +26,7 @@ export function Achievements() {
           <Card className="relative group-hover:border-primary/50 group-hover:shadow-md group-hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
             <CardHeader className="relative pr-10">
               <Badge variant="outline" className="w-fit text-primary border-primary/30">
-                Paper
+                {t.achievements.paper}
               </Badge>
               <ExternalLink className="absolute top-6 right-6 w-4 h-4 text-muted-foreground/70 group-hover:text-primary transition-colors" />
               <CardTitle className="text-base mt-2">
@@ -33,9 +36,7 @@ export function Achievements() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Demo paper addressing: &ldquo;To what extent can a dynamic model-selection mechanism,
-                guided by a Region of Competence and Dynamic Weight Selection, improve anomaly detection
-                in heterogeneous microservice systems compared with single static detectors?&rdquo;
+                {t.achievements.paperDesc}
               </p>
             </CardContent>
           </Card>
@@ -47,7 +48,7 @@ export function Achievements() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="text-primary border-primary/30">
-                  Hackathon
+                  {t.achievements.hackathon}
                 </Badge>
                 <span className="text-xs text-muted-foreground font-mono">Sep 2026</span>
               </div>
@@ -57,9 +58,7 @@ export function Achievements() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Placed <strong className="text-foreground">2nd among 160+ participants</strong>. Built
-                agents that modified functional documentation based on developers&apos; Jira ticket
-                states, created dashboards for managers, and proposed documentation improvements.
+                {t.achievements.hackathonDesc}
               </p>
             </CardContent>
           </Card>
@@ -75,7 +74,7 @@ export function Achievements() {
               <CardHeader className="relative pr-10">
                 <div className="flex items-center gap-2">
                   <Badge variant="outline" className="text-primary border-primary/30">
-                    Puzzle
+                    {t.achievements.puzzle}
                   </Badge>
                   <span className="text-xs text-muted-foreground font-mono">Aug 2026</span>
                 </div>
@@ -84,7 +83,7 @@ export function Achievements() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  &ldquo;Andy’s Afternoon Amble&rdquo; puzzle by modelling the random walk as a Markov chain on distance from the starting tile. I set up the resulting <strong className="text-foreground">system of linear equations</strong> and solved it exactly in Java using a custom BigInteger fraction class and <strong className="text-foreground"> Gaussian elimination</strong>, which gave an exact answer of <strong className="text-foreground">11/20</strong>
+                  {t.achievements.puzzleDesc}
                 </p>
               </CardContent>
             </Card>
