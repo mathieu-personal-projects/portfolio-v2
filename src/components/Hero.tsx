@@ -1,17 +1,12 @@
 import { Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GitHubIcon, LinkedInIcon, GitLabIcon, StackOverflowIcon } from "./icons";
-import logoSrc from "../assets/ma-logo.png";
+import { useTranslation } from "@/lib/i18n";
 import { FaStackOverflow } from "react-icons/fa";
 
-const stats = [
-  { value: "2+", label: "Years experience" },
-  { value: "2nd", label: "Place Hackathon" },
-  { value: "2", label: "Certifications" },
-  { value: "5+", label: "Projects" },
-];
-
 export function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center pt-14 px-6 overflow-hidden">
       <div
@@ -30,7 +25,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
           </span>
-          Open to opportunities
+          {t.hero.status}
         </div>
 
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-none">
@@ -38,21 +33,17 @@ export function Hero() {
         </h1>
 
         <p className="text-xl sm:text-2xl text-muted-foreground mt-5 font-medium">
-          Data Engineer
+          {t.hero.title}
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 mt-14 items-start">
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-4 max-w-xl">
               <p className="text-base text-muted-foreground leading-relaxed">
-                Currently working as a Data Engineer intern at Crédit Agricole Assurances Solutions,
-                my thriving passion and curiosity for Big Data, Blockchain/Web3, AI &amp; Cloud
-                infrastructures motivate me to develop my skills and explore new technologies.
+                {t.hero.bio1}
               </p>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Eager to push further and materialise my skills, I&apos;m willing to get
-                certifications (GCP, AWS, TOGAF, Oracle/Sun Microsystems&hellip;) and learn
-                continuously throughout my career.
+                {t.hero.bio2}
               </p>
             </div>
 
@@ -60,13 +51,13 @@ export function Hero() {
               <Button size="lg" className="text-white" asChild>
                 <a href="mailto:mathieu.audibert27@gmail.com">
                   <Mail className="size-4 text-white" />
-                  Get in touch
+                  {t.hero.getInTouch}
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="pointer-events-none opacity-50" asChild>
                 <a href="path/to/cv" target="_blank" rel="noopener noreferrer">
                   <Download className="size-4" />
-                  My Resume (WIP)
+                  {t.hero.resume}
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
@@ -98,7 +89,7 @@ export function Hero() {
 
           <div className="lg:col-span-2">
             <div className="grid grid-cols-2 gap-3">
-              {stats.map((stat) => (
+              {t.hero.stats.map((stat) => (
                 <div
                   key={stat.label}
                   className="rounded-xl border bg-background/80 p-5 hover:border-primary/40 transition-colors"

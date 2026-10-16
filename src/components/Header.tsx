@@ -1,16 +1,19 @@
-import { Mail } from "lucide-react";
+import { Mail, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GitHubIcon, GitLabIcon, LinkedInIcon } from "./icons";
+import { useTranslation } from "@/lib/i18n";
 import logoSrc from "../assets/ma-logo.png";
 
-const navLinks = [
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#education", label: "Education" },
-  { href: "#skills", label: "Skills" },
-];
-
 export function Header() {
+  const { lang, setLang, t } = useTranslation();
+
+  const navLinks = [
+    { href: "#experience", label: t.nav.experience },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#education", label: t.nav.education },
+    { href: "#skills", label: t.nav.skills },
+  ];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="max-w-5xl mx-auto flex items-center justify-between h-14 px-6">
@@ -29,6 +32,16 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setLang(lang === "en" ? "fr" : "en")}
+            className="gap-1.5 text-xs font-mono font-semibold"
+            aria-label={lang === "en" ? "Switch to French" : "Switch to English"}
+          >
+            <Languages className="size-3.5" />
+            {lang === "en" ? "EN" : "FR"}
+          </Button>
           <Button variant="ghost" size="icon-sm" asChild>
             <a href="mailto:mathieu.audibert27@gmail.com" aria-label="Email">
               <Mail className="size-4" />
